@@ -67,7 +67,9 @@
       "Bash(gh --version)",
       "Bash(gh auth *)",
       "Bash(cd \"C:/Users/lollo/Downloads/Subtracker\" && git config --get credential.helper 2>&1; echo \"---ssh keys---\"; ls -la ~/.ssh 2>&1)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git push *)"
     ]
   }
 }
