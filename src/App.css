@@ -1,0 +1,258 @@
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: var(--card-shadow);
+  padding: 2rem 2rem 2.25rem;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: flex-start;
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin: 0.5rem auto 1.25rem;
+  display: block;
+}
+
+.card h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.card h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0.4rem 0 1.5rem;
+  line-height: 1.4;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  text-align: left;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.auth-form input {
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  border: none;
+  border-radius: 999px;
+  background: var(--field-bg);
+  color: var(--navy);
+  outline: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.auth-form input:focus {
+  box-shadow: 0 0 0 3px var(--purple-light);
+}
+
+.btn-primary {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--heading);
+  color: #fff;
+  background: var(--purple);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 12px 20px -8px rgba(124, 110, 242, 0.65);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--purple-dark);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.auth-toggle {
+  margin-top: 0.35rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.auth-toggle span {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.auth-error {
+  color: #d64550;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.auth-message {
+  color: #2e9e5b;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.dashboard-welcome {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0.75rem 0 1.75rem;
+}
+
+.dashboard-welcome strong {
+  color: var(--navy);
+}
+
+.dashboard {
+  max-width: 560px;
+  text-align: left;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.dashboard-header .btn-primary {
+  margin-top: 0;
+  width: auto;
+  padding: 0.6rem 1.1rem;
+}
+
+.auth-form select {
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  border: none;
+  border-radius: 999px;
+  background: var(--field-bg);
+  color: var(--navy);
+  outline: none;
+}
+
+.subscription-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.subscription-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--field-bg);
+  border-radius: 16px;
+}
+
+.subscription-actions {
+  display: flex;
+  gap: 0.75rem;
+  white-space: nowrap;
+}
+
+.subscription-actions .auth-toggle {
+  margin-top: 0;
+}
+
+.insight-banner {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+}
+
+.insight-banner ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.insight-banner li {
+  margin-bottom: 0.3rem;
+}
+
+.insight-recommendations li,
+.insight-notifications li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.insight-recommendations ul,
+.insight-notifications ul {
+  padding-left: 0;
+}
+
+.insight-recommendations .auth-toggle,
+.insight-notifications .auth-toggle {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.insight-spend {
+  background: var(--purple-light);
+  color: var(--navy);
+}
+
+.insight-warning {
+  background: #fdecea;
+  color: #8a3324;
+}
+
+.insight-notifications {
+  background: #eaf2fd;
+  color: #1c4e80;
+}
+
+.insight-recommendations {
+  background: #eafaf0;
+  color: #1c5c3a;
+}

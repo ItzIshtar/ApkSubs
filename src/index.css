@@ -1,0 +1,46 @@
+:root {
+  --purple: #7c6ef2;
+  --purple-dark: #6a5cd8;
+  --purple-light: #ede9ff;
+  --navy: #1f2138;
+  --muted: #8a8fa3;
+  --field-bg: #f4f5fa;
+  --bg-start: #eef0fb;
+  --bg-end: #dfe3f5;
+  --card-shadow: 0 24px 48px -12px rgba(76, 66, 160, 0.25);
+
+  --sans: 'Nunito', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  font: 16px/1.5 var(--sans);
+  color: var(--navy);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: linear-gradient(160deg, var(--bg-start), var(--bg-end));
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  color: var(--navy);
+  margin: 0;
+}
