@@ -1,4 +1,15 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
+  /* --- Legacy palette (kept for existing component styles in App.css) --- */
   --purple: #7c6ef2;
   --purple-dark: #6a5cd8;
   --purple-light: #ede9ff;
@@ -9,8 +20,24 @@
   --bg-end: #dfe3f5;
   --card-shadow: 0 24px 48px -12px rgba(76, 66, 160, 0.25);
 
-  --sans: 'Nunito', system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  /* --- Design system tokens (HSL triples, consumed via hsl(var(--x)) in tailwind.config.ts) --- */
+  --background: 240 33% 98%;
+  --background-secondary: 233 40% 95%;
+  --card: 0 0% 100%;
+  --card-elevated: 0 0% 100%;
+  --text-primary: 237 30% 16%;
+  --text-secondary: 230 12% 40%;
+  --text-tertiary: 230 10% 60%;
+  --border: 230 35% 92%;
+  --accent: 246 84% 69%;
+  --accent-hover: 245 55% 58%;
+  --accent-pressed: 246 51% 51%;
+  --success: 147 55% 39%;
+  --danger: 355 61% 55%;
+  --gold: 38 76% 58%;
 
   font: 16px/1.5 var(--sans);
   color: var(--navy);
@@ -18,6 +45,30 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  --background: 240 24% 9%;
+  --background-secondary: 237 22% 13%;
+  --card: 236 22% 16%;
+  --card-elevated: 237 25% 21%;
+  --text-primary: 230 40% 96%;
+  --text-secondary: 228 15% 73%;
+  --text-tertiary: 230 12% 55%;
+  --border: 235 20% 21%;
+  --accent: 246 100% 76%;
+  --accent-hover: 246 84% 69%;
+  --accent-pressed: 245 55% 58%;
+  --success: 142 71% 63%;
+  --danger: 0 91% 71%;
+  --gold: 43 87% 65%;
+}
+
+@layer utilities {
+  .font-tabular-nums {
+    font-feature-settings: 'tnum' 1;
+    font-variant-numeric: tabular-nums;
+  }
 }
 
 * {
