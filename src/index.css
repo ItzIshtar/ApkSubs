@@ -1,4 +1,15 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
+  /* --- Legacy palette (kept for existing component styles in App.css) --- */
   --purple: #7c6ef2;
   --purple-dark: #6a5cd8;
   --purple-light: #ede9ff;
@@ -9,8 +20,29 @@
   --bg-end: #dfe3f5;
   --card-shadow: 0 24px 48px -12px rgba(76, 66, 160, 0.25);
 
-  --sans: 'Nunito', system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  /* --- Design system tokens (HSL triples, consumed via hsl(var(--x)) in tailwind.config.ts) ---
+     Palette source: dyslove.design "New Color Combos" — Onyx #020202, Candy Blue #B2D5E5,
+     Orchid #E5BDDF, Turquoise #99E1D9. Onyx drives neutrals/text, Candy Blue is the accent,
+     Orchid is gold, Turquoise is deepened for legible success text. Danger kept as standard
+     red since none of the four source colors read as an error color. */
+  --background: 199 40% 98%;
+  --background-secondary: 199 35% 95%;
+  --card: 0 0% 100%;
+  --card-elevated: 0 0% 100%;
+  --text-primary: 0 0% 1%;
+  --text-secondary: 199 8% 35%;
+  --text-tertiary: 199 8% 58%;
+  --border: 199 30% 91%;
+  --accent: 199 50% 80%;
+  --accent-hover: 199 50% 72%;
+  --accent-pressed: 199 50% 64%;
+  --on-accent: 0 0% 1%;
+  --success: 173 55% 30%;
+  --danger: 355 61% 55%;
+  --gold: 309 43% 82%;
 
   font: 16px/1.5 var(--sans);
   color: var(--navy);
@@ -18,6 +50,30 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  --background: 0 0% 3%;
+  --background-secondary: 0 0% 6%;
+  --card: 0 0% 9%;
+  --card-elevated: 0 0% 13%;
+  --text-primary: 199 20% 96%;
+  --text-secondary: 199 10% 75%;
+  --text-tertiary: 199 8% 55%;
+  --border: 0 0% 16%;
+  --accent: 199 55% 72%;
+  --accent-hover: 199 55% 64%;
+  --accent-pressed: 199 55% 56%;
+  --success: 173 55% 65%;
+  --danger: 0 91% 71%;
+  --gold: 309 48% 76%;
+}
+
+@layer utilities {
+  .font-tabular-nums {
+    font-feature-settings: 'tnum' 1;
+    font-variant-numeric: tabular-nums;
+  }
 }
 
 * {

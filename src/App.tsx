@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { supabase } from './lib/supabaseClient'
 import { useAuth } from './lib/useAuth'
+import { useTheme } from './lib/useTheme'
 import { useProfile } from './lib/useProfile'
 import { useSubscriptions } from './lib/useSubscriptions'
 import { useMonthlySpend } from './lib/useMonthlySpend'
@@ -16,6 +17,7 @@ import { DuplicateWarning } from './components/DuplicateWarning'
 import { MonthlySpendSummary } from './components/MonthlySpendSummary'
 import { RecommendationsList } from './components/RecommendationsList'
 import { NotificationsList } from './components/NotificationsList'
+import { ThemeToggle } from './components/ThemeToggle'
 import type { Tables } from './lib/database.types'
 import './App.css'
 
@@ -114,16 +116,20 @@ function Dashboard({ userId }: { userId: string }) {
 
 function App() {
   const { user, loading } = useAuth()
+  const { theme, toggleTheme } = useTheme()
 
-  if (loading) {
-    return <div className="card">Cargando…</div>
-  }
-
-  if (!user) {
-    return <AuthForm />
-  }
-
-  return <Dashboard userId={user.id} />
+  return (
+    <>
+      <ThemeToggle theme={theme} onToggle={toggleTheme} />
+      {loading ? (
+        <div className="card">Cargando…</div>
+      ) : !user ? (
+        <AuthForm />
+      ) : (
+        <Dashboard userId={user.id} />
+      )}
+    </>
+  )
 }
 
 export default App
