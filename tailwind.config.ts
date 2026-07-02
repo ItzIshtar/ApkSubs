@@ -24,6 +24,7 @@ export default {
           DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
           hover: 'hsl(var(--accent-hover) / <alpha-value>)',
           pressed: 'hsl(var(--accent-pressed) / <alpha-value>)',
+          foreground: 'hsl(var(--on-accent) / <alpha-value>)',
         },
         success: 'hsl(var(--success) / <alpha-value>)',
         danger: 'hsl(var(--danger) / <alpha-value>)',

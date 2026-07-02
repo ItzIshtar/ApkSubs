@@ -77,7 +77,7 @@ export function AuthForm() {
         <button
           type="submit"
           disabled={loading}
-          className="mt-2 rounded-full bg-accent px-[1.1rem] py-[0.9rem] text-base font-bold text-white shadow-[0_12px_20px_-8px_hsl(var(--accent)/0.65)] transition-[background-color,transform] duration-150 enabled:hover:bg-accent-hover enabled:active:scale-[0.98] disabled:cursor-default disabled:opacity-65"
+          className="mt-2 rounded-full bg-accent px-[1.1rem] py-[0.9rem] text-base font-bold text-accent-foreground shadow-[0_12px_20px_-8px_hsl(var(--accent)/0.65)] transition-[background-color,transform] duration-150 enabled:hover:bg-accent-hover enabled:active:scale-[0.98] disabled:cursor-default disabled:opacity-65"
         >
           {loading ? 'Procesando…' : mode === 'sign-in' ? 'Entrar' : 'Registrarme'}
         </button>
@@ -93,9 +93,9 @@ export function AuthForm() {
         className="mt-1.5 cursor-pointer border-none bg-transparent text-center text-sm text-text-tertiary"
       >
         {mode === 'sign-in' ? (
-          <>¿No tienes cuenta? <span className="font-bold text-accent">Regístrate</span></>
+          <>¿No tienes cuenta? <span className="font-bold text-text-primary">Regístrate</span></>
         ) : (
-          <>¿Ya tienes cuenta? <span className="font-bold text-accent">Inicia sesión</span></>
+          <>¿Ya tienes cuenta? <span className="font-bold text-text-primary">Inicia sesión</span></>
         )}
       </button>
     </div>
